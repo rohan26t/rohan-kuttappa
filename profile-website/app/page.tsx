@@ -1,7 +1,10 @@
+import { assetPath } from '@/lib/asset-path';
 import Image from 'next/image';
 import { ArrowUpRight, ArrowDown, Download, MapPin, Layers3, Route, ShieldCheck, Zap, Users, Target } from 'lucide-react';
 import { profile, experience, expertise, education } from '@/lib/profile';
 import { Navigation } from '@/components/navigation';
+
+export const dynamic = 'force-static';
 
 const icons = [Route, ShieldCheck, Users, Zap, Target, Layers3];
 export default function Home() {
@@ -19,7 +22,7 @@ export default function Home() {
           <div className="hero-actions"><a className="button button-primary" href="#experience">View my experience <ArrowUpRight size={18} /></a><a className="button button-outline" href={profile.resume} download>Download resume <Download size={17} /></a></div>
           <div className="hero-location"><MapPin size={15} /> Bengaluru, India <span className="divider" /> 13+ years of leadership</div>
         </div>
-        <div className="portrait-wrap"><div className="portrait-frame"><Image unoptimized src="/rohan-portrait.png" alt="T.M. Rohan in a dark suit and tie" width="519" height="519" fetchPriority="high" /><div className="portrait-shade" /></div><span className="portrait-caption">FROM THE FRONT LINE TO PROGRAM LEADERSHIP</span></div>
+        <div className="portrait-wrap"><div className="portrait-frame"><Image unoptimized src={assetPath("/rohan-portrait.png")} alt="T.M. Rohan in a dark suit and tie" width="519" height="519" fetchPriority="high" /><div className="portrait-shade" /></div><span className="portrait-caption">FROM THE FRONT LINE TO PROGRAM LEADERSHIP</span></div>
       </section>
       <div className="container"><div className="impact-strip" aria-label="Selected career achievements"><div><strong>17<span> countries</span></strong><p>Technology integration portfolio</p></div><div><strong>95<span>%</span></strong><p>On-time delivery at State Street</p></div><div><strong>120<span>+ hours</span></strong><p>Saved monthly through automation</p></div></div></div>
       <section className="section container about-grid" id="about"><div><p className="eyebrow">01 / ABOUT ME</p><h2>Purpose in leadership.<br /><span className="muted-heading">Precision in delivery.</span></h2></div><div className="about-copy"><p className="lead">I lead complex programs by aligning people, priorities, and execution.</p><p>My 13+ years span enterprise technology, financial services, telecom, and the Indian Army. I bring the discipline of military leadership together with corporate delivery experience to help teams navigate complexity and deliver with confidence.</p><p>From planning and governance to UAT, go-live, and operational handover, I focus on clear ownership, sound decisions, and measurable outcomes.</p><div className="about-signoff"><span className="coral">T.M. Rohan</span><span>Program leader. Veteran. Problem solver.</span></div></div></section>

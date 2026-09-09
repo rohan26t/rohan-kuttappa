@@ -30,3 +30,13 @@ The Sites project ID is recorded in `.openai/hosting.json`. The initial deployme
 ## Validation
 
 Production build, TypeScript, lint, HTTP responses, internal anchor destinations, download bytes, PDF text redaction, and PDF visual review are checked during delivery. The connected browser was unavailable, so interactive mobile and browser visual checks could not be completed in this environment.
+
+## GitHub Pages
+
+The public website is deployed by `.github/workflows/deploy-pages.yml` whenever website files are pushed to `main`, or when the workflow is run manually.
+
+Public URL: https://rohan26t.github.io/rohan-kuttappa/
+
+`npm run build:pages` produces the static site in `dist/client`. The Pages build uses an asset prefix for the repository subdirectory; public image, icon, and resume links use `lib/asset-path.ts`. The page remains a single static route with fragment navigation. Regular `npm run build` retains the Sites build configuration.
+
+GitHub repository Settings → Pages → Source must be set to GitHub Actions. Only `dist/client` is uploaded, never the entire repository or server output.

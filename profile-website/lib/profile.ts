@@ -1,5 +1,6 @@
+import { assetPath } from './asset-path';
 export const profile = {
-  email: 'rohan26t@gmail.com', location: 'Bengaluru, India', resume: '/TM_Rohan_Resume.pdf',
+  email: 'rohan26t@gmail.com', location: 'Bengaluru, India', resume: assetPath('/TM_Rohan_Resume.pdf'),
   tools: ['Jira', 'Power Automate', 'Power BI', 'Excel', 'Microsoft Project Plan', 'Agile / Scrum'],
 };
 export const experience = [
